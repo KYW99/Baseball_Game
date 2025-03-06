@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>숫자 야구 게임</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<h1>⚾ 숫자 야구 게임</h1>
+<p>아이디를 입력하세요:</p>
+<input type="text" id="playerIdInput" placeholder="아이디 입력">
+<button onclick="submitId()">아이디 제출</button>
+
+<p>1~9 사이의 서로 다른 3개 숫자를 입력하세요!</p>
+
+<input type="text" id="guessInput" placeholder="예: 1,2,3">
+<button id="submitButton" onclick="submitGuess()">확인</button>
+<button id="resetButton" onclick="resetGame()" style="display:none;">다시하기</button>
+
+<h2>결과</h2>
+<p id="attempts">시도 횟수: 0</p>
+<p id="result"></p>
+
+<h3>게임 규칙</h3>
+<div id="game-rules">
+    <ul style="list-style-type: none;">
+        <li><strong>스트라이크</strong>: 숫자와 자리가 모두 맞으면 스트라이크입니다.</li>
+        <li><strong>볼</strong>: 숫자는 맞지만 자리가 다르면 볼입니다.</li>
+        <li>게임은 3번의 스트라이크가 나오면 종료됩니다.</li>
+        <li>서로 다른 3개의 숫자를 맞춰야 합니다.</li>
+        <li>숫자는 1부터 9까지 중에서만 선택할 수 있습니다.</li>
+    </ul>
+</div>
+
+<h3>순위</h3>
+<ul id="leaderboard">
+
+</ul>
+
+<script src="/js/baseball-game.js"></script>
+</body>
+</html>
